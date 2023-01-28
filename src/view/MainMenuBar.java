@@ -1,8 +1,16 @@
+package view;
+
+import view.course.AddCoursePanel;
+import view.student.AddStudentFrame;
+
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class MainMenuBar extends JMenuBar {
     public MainMenuBar(){
-
+        add(fileMenu());
+        add(helpMenu());
     }
     private JMenu fileMenu() {
         JMenu file = new JMenu("Файл");
@@ -15,6 +23,22 @@ public class MainMenuBar extends JMenuBar {
         file.add(newItem);
         newItem.add(newStudent);
         newItem.add(newCourse);
+        file.add(settings);
+        file.add(leave);
+
+        newStudent.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new AddStudentFrame();
+            }
+        });
+
+        newCourse.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new AddCoursePanel();
+            }
+        });
         return file;
     }
     private JMenu helpMenu() {

@@ -1,3 +1,11 @@
+package view;
+
+import view.course.AddCourseFrame;
+import view.course.AddCoursePanel;
+import view.course.CourseListPanel;
+import view.student.AddStudentPanel;
+import view.student.StudentListPanel;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -10,6 +18,8 @@ public class MainFrame extends JFrame {
         add(new AddStudentPanel());
         setJMenuBar(new MainMenuBar());
         add(new StudentListPanel());
+        add(new AddCoursePanel());
+        add(new CourseListPanel());
 
 
 
